@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: messenger
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TURN_URL
+        value: YOUR_TURN_URL_HERE
+      - key: TURN_USERNAME
+        value: YOUR_TURN_USERNAME_HERE
+      - key: TURN_CREDENTIAL
+        value: YOUR_TURN_CREDENTIAL_HERE
